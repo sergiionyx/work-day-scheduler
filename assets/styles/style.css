@@ -31,7 +31,7 @@ textarea{
 }
 
 .row {
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
   height: 80px;
   border-top: 1px solid white;;
 }
@@ -77,6 +77,13 @@ textarea{
   text-align: center;
 }
 
-p{
-  margin-bottom: 0;
+p {
+  margin: auto;
+  color: #000000;
+}
+
+.col-10 {
+  padding: 1%;
+  background-color: rgba(127, 255, 212, 0.233);
+  border-top: 1px dashed #000000;  
 }
