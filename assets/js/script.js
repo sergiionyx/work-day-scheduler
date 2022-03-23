@@ -79,9 +79,6 @@ function loadTasks () {
     for (var i = 0; i < 8; i++) {
         $("#" + i).find("p").text(tasks[i]);
     }
-
-    //Give the time
-    //$("#currentDay").text("Today is " + moment().format("dddd, MMMM Do YYYY, h:mm a"));
 };
 
 loadTasks();
