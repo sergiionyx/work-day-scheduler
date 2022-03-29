@@ -42,11 +42,11 @@ $(".col-10").on("blur", "textarea", function () {
 });
 
 // CHECK TASK AND CHANGE THE CLASS
-function checkTask () {
+function checkTask() {
     //convert index into time of time-block
     time = timeStartsAt;
     var currentTime = moment().hour();
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 9; i++) {
         var taskEl = $("#" + i);
         // add new class
         if (currentTime > time) {
@@ -61,7 +61,7 @@ function checkTask () {
 };
 
 // SAVE TASK
-function saveTask () {
+function saveTask() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
@@ -71,15 +71,18 @@ $(".saveBtn").on("click", function () {
     checkTask();
 });
 
-function loadTasks () {
-
-    tasks = JSON.parse(localStorage.getItem("tasks"));
-    console.log(tasks);
-    //put values into their respective spots and audit it.
-    for (var i = 0; i < 8; i++) {
-        $("#" + i).find("p").text(tasks[i]);
+function loadTasks() {
+    //if local storage has tasks
+    if (localStorage.length !== 0) {
+        tasks = JSON.parse(localStorage.getItem("tasks"));
+        //put values into their respective spots and audit it.
+        for (var i = 0; i < 9; i++) {
+            $("#" + i).find("p").text(tasks[i]);
+        }
     }
 };
+
+
 
 loadTasks();
 checkTask();
